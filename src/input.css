@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  h1 {
+    @apply text-[32px] text-[#0a0a0a];
+  }
+  h2 {
+    @apply text-[28px] text-[#0a0a0a];
+  }
+  h3 {
+    @apply text-[24px] text-[#0a0a0a];
+  }
+  h4 {
+    @apply text-[20px] text-[#0a0a0a];
+  }
+  h5 {
+    @apply text-[15px] text-[#0a0a0a];
+  }
+  h6 {
+    @apply text-[12px] text-[#0a0a0a];
+  }
+}
