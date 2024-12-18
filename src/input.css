@@ -6,6 +6,9 @@
   .card {
     @apply m-auto h-[97px] w-[82px] border-2 border-black bg-violet-600 rounded;
   }
+  .cardopt {
+    @apply m-auto h-[50px] w-[42px] border-2 border-black bg-violet-600 rounded;
+  }
   .opencard {
     @apply h-[97px] w-[82px] border-2 border-black bg-violet-600 rounded;
   }

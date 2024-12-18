@@ -642,12 +642,20 @@ h6 {
   width: 83.333333%;
 }
 
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-cols-\[50px_1fr\] {
   grid-template-columns: 50px 1fr;
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .grid-rows-5 {
@@ -664,6 +672,10 @@ h6 {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-4 {
@@ -701,6 +713,18 @@ h6 {
   margin: auto;
   height: 97px;
   width: 82px;
+  border-radius: 0.25rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(124 58 237 / var(--tw-bg-opacity, 1));
+}
+
+.cardopt {
+  margin: auto;
+  height: 50px;
+  width: 42px;
   border-radius: 0.25rem;
   border-width: 2px;
   --tw-border-opacity: 1;
