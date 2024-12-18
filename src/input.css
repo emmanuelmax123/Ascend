@@ -4,13 +4,13 @@
 
 @layer utilities {
   .card {
-    @apply m-auto h-[107px] w-[82px] border-2 border-black bg-violet-600 rounded;
+    @apply m-auto h-[97px] w-[82px] border-2 border-black bg-violet-600 rounded;
   }
   .opencard {
-    @apply h-[107px] w-[82px] border-2 border-black bg-violet-600 rounded;
+    @apply h-[97px] w-[82px] border-2 border-black bg-violet-600 rounded;
   }
   .start {
-    @apply m-auto h-[107px] w-full border-2 border-black bg-violet-600 rounded;
+    @apply bg-slate-500 border-2 rounded-full h-8 w-8 m-auto;
   }
 }
 @layer base {

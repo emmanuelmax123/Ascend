@@ -602,20 +602,20 @@ h6 {
   right: 1.25rem;
 }
 
-.top-\[161px\] {
-  top: 161px;
+.top-\[151px\] {
+  top: 151px;
 }
 
-.top-\[284px\] {
-  top: 284px;
+.top-\[264px\] {
+  top: 264px;
 }
 
-.top-\[407px\] {
-  top: 407px;
+.top-\[377px\] {
+  top: 377px;
 }
 
-.top-\[530px\] {
-  top: 530px;
+.top-\[490px\] {
+  top: 490px;
 }
 
 .col-span-4 {
@@ -624,10 +624,6 @@ h6 {
 
 .mb-9 {
   margin-bottom: 2.25rem;
-}
-
-.mt-9 {
-  margin-top: 2.25rem;
 }
 
 .flex {
@@ -703,7 +699,7 @@ h6 {
 
 .card {
   margin: auto;
-  height: 107px;
+  height: 97px;
   width: 82px;
   border-radius: 0.25rem;
   border-width: 2px;
@@ -714,7 +710,7 @@ h6 {
 }
 
 .opencard {
-  height: 107px;
+  height: 97px;
   width: 82px;
   border-radius: 0.25rem;
   border-width: 2px;
@@ -726,12 +722,10 @@ h6 {
 
 .start {
   margin: auto;
-  height: 107px;
-  width: 100%;
-  border-radius: 0.25rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 9999px;
   border-width: 2px;
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
   --tw-bg-opacity: 1;
-  background-color: rgb(124 58 237 / var(--tw-bg-opacity, 1));
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity, 1));
 }
