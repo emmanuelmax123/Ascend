@@ -6,9 +6,7 @@
     <link rel="stylesheet" href="src/output.css" />
     <title>Ascend</title>
   </head>
-  <body
-    class="border-black border-2 p-12 grid grid-cols-[50px_912px_auto] items-cente"
-  >
+  <body class="border-black border-2 p-12 grid grid-cols-[50px_1fr]">
     <!-- home icon starts here -->
     <section class="">
       <svg
@@ -25,31 +23,106 @@
     </section>
 
     <!-- main game saction starts here -->
-    <section class="border-2 border-black h-auto">
+    <section class="">
       <!-- game play starts here -->
-      <section class="px-[137px] py-[50px]">
+      <div class="relative">
         <section
-          class="min-h-screen grid grid-cols-5 grid-rows-2 border-2 gap-4 border-red-500"
+          class="border-2 border-black grid grid-cols-4 grid-rows-5 gap-4 w-5/6 p-9"
         >
-          <div class="border-2 border-black bg-violet-600 rounded"></div>
-          <div class="border-2 border-black bg-violet-600 rounded"></div>
-          <div class="border-2 border-black bg-violet-600 rounded"></div>
-          <div class="border-2 border-black bg-violet-600 rounded"></div>
-          <!-- cards section starts here -->
-          <div class="border-2 border-black bg-violet-600"></div>
-          <!-- new row -->
-          <div class="border-2 border-black bg-violet-600 rounded"></div>
-          <div class="border-2 border-black bg-violet-600 rounded"></div>
-          <div class="border-2 border-black bg-violet-600 rounded"></div>
-          <div class="border-2 border-black bg-violet-600 rounded"></div>
-          <!-- cards section starts here -->
-          <div class="border-2 border-black bg-violet-600"></div>
+          <!-- finish line -->
+          <div class="card col-span-4"></div>
+          <!-- 4th row -->
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <!-- hidden card 4th -->
+          <div
+            class="card absolute right-5 top-[161px] mt-9 items-center justify-center flex"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 19C12.8284 19 13.5 19.6716 13.5 20.5C13.5 21.3284 12.8284 22 12 22C11.1716 22 10.5 21.3284 10.5 20.5C10.5 19.6716 11.1716 19 12 19ZM12 2C15.3137 2 18 4.68629 18 8C18 10.1646 17.2474 11.2907 15.3259 12.9231C13.3986 14.5604 13 15.2969 13 17H11C11 14.526 11.787 13.3052 14.031 11.3989C15.5479 10.1102 16 9.43374 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8V9H6V8C6 4.68629 8.68629 2 12 2Z"
+              ></path>
+            </svg>
+          </div>
+          <!-- 3rd row -->
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <!-- hidden card 3th -->
+          <div
+            class="card absolute top-[284px] right-5 items-center justify-center flex"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 19C12.8284 19 13.5 19.6716 13.5 20.5C13.5 21.3284 12.8284 22 12 22C11.1716 22 10.5 21.3284 10.5 20.5C10.5 19.6716 11.1716 19 12 19ZM12 2C15.3137 2 18 4.68629 18 8C18 10.1646 17.2474 11.2907 15.3259 12.9231C13.3986 14.5604 13 15.2969 13 17H11C11 14.526 11.787 13.3052 14.031 11.3989C15.5479 10.1102 16 9.43374 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8V9H6V8C6 4.68629 8.68629 2 12 2Z"
+              ></path>
+            </svg>
+          </div>
+          <!-- 2nd row -->
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <!-- hidden card 3th -->
+          <div
+            class="card absolute top-[407px] right-5 items-center justify-center flex"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 19C12.8284 19 13.5 19.6716 13.5 20.5C13.5 21.3284 12.8284 22 12 22C11.1716 22 10.5 21.3284 10.5 20.5C10.5 19.6716 11.1716 19 12 19ZM12 2C15.3137 2 18 4.68629 18 8C18 10.1646 17.2474 11.2907 15.3259 12.9231C13.3986 14.5604 13 15.2969 13 17H11C11 14.526 11.787 13.3052 14.031 11.3989C15.5479 10.1102 16 9.43374 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8V9H6V8C6 4.68629 8.68629 2 12 2Z"
+              ></path>
+            </svg>
+          </div>
+
+          <!-- 1st row -->
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <!-- hidden card 1st -->
+          <div
+            class="card absolute right-5 top-[530px] mb-9 items-center justify-center flex"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 19C12.8284 19 13.5 19.6716 13.5 20.5C13.5 21.3284 12.8284 22 12 22C11.1716 22 10.5 21.3284 10.5 20.5C10.5 19.6716 11.1716 19 12 19ZM12 2C15.3137 2 18 4.68629 18 8C18 10.1646 17.2474 11.2907 15.3259 12.9231C13.3986 14.5604 13 15.2969 13 17H11C11 14.526 11.787 13.3052 14.031 11.3989C15.5479 10.1102 16 9.43374 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8V9H6V8C6 4.68629 8.68629 2 12 2Z"
+              ></path>
+            </svg>
+          </div>
+          <!-- start line -->
+          <div class="start col-span-4"></div>
         </section>
-      </section>
+        <!-- card hidden -->
+      </div>
+
       <!-- gameplay option and spread deck starst here -->
-      <section class="flex border-2 border-black justify-between">
-        <div>shuffle cards</div>
-        <div>option for cards</div>
+      <section class="flex justify-between px-[43px] py-[36px] relative">
+        <div class="opencard"></div>
+        <!-- special cards options -->
+        <div>
+          <div>YES</div>
+          <div>NO</div>
+        </div>
+        <div class="absolute card right-5">card</div>
       </section>
     </section>
   </body>

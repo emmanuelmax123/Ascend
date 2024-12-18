@@ -1,6 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .card {
+    @apply m-auto h-[107px] w-[82px] border-2 border-black bg-violet-600 rounded;
+  }
+  .opencard {
+    @apply h-[107px] w-[82px] border-2 border-black bg-violet-600 rounded;
+  }
+  .start {
+    @apply m-auto h-[107px] w-full border-2 border-black bg-violet-600 rounded;
+  }
+}
 @layer base {
   h1 {
     @apply text-[32px] text-[#0a0a0a];
