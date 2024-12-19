@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- home icon starts here -->
+    <section class="">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+        fill="currentColor"
+      >
+        <path
+          d="M20 20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20ZM8 15V17H16V15H8Z"
+        ></path>
+      </svg>
+      <div class="card" onclick="shuffle(deck)">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M18 17.8832V16L23 19L18 22V19.9095C14.9224 19.4698 12.2513 17.4584 11.0029 14.5453L11 14.5386L10.9971 14.5453C9.57893 17.8544 6.32508 20 2.72483 20H2V18H2.72483C5.52503 18 8.05579 16.3312 9.15885 13.7574L9.91203 12L9.15885 10.2426C8.05579 7.66878 5.52503 6 2.72483 6H2V4H2.72483C6.32508 4 9.57893 6.14557 10.9971 9.45473L11 9.46141L11.0029 9.45473C12.2513 6.5416 14.9224 4.53022 18 4.09051V2L23 5L18 8V6.11684C15.7266 6.53763 13.7737 8.0667 12.8412 10.2426L12.088 12L12.8412 13.7574C13.7737 15.9333 15.7266 17.4624 18 17.8832Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="card open-card" onclick="generateDeck()">card</div>
+      <div class="">click here to pick a card to play with</div>
+      <div class="grid grid-cols-2 grid-rows-2 gap-2">
+        <div id="spade" class="cardopt">spade</div>
+        <div id="club" class="cardopt">club</div>
+        <div id="heart" class="cardopt">heart</div>
+        <div id="diamond" class="cardopt">diamond</div>
+      </div>
+    </section>
+
+    <!-- main game saction starts here -->
+    <section class="">
+      <!-- game play starts here -->
+      <div class="relative">
+        <section
+          class="border-2 border-black grid grid-cols-4 grid-rows-5 gap-4 w-5/6 p-9"
+        >
+          <!-- finish line -->
+          <div class="card col-span-4"></div>
+
+          <!-- 4th row -->
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <!-- hidden card 4th -->
+          <div
+            class="card absolute right-5 top-[151px] items-center justify-center flex hidden-card"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 19C12.8284 19 13.5 19.6716 13.5 20.5C13.5 21.3284 12.8284 22 12 22C11.1716 22 10.5 21.3284 10.5 20.5C10.5 19.6716 11.1716 19 12 19ZM12 2C15.3137 2 18 4.68629 18 8C18 10.1646 17.2474 11.2907 15.3259 12.9231C13.3986 14.5604 13 15.2969 13 17H11C11 14.526 11.787 13.3052 14.031 11.3989C15.5479 10.1102 16 9.43374 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8V9H6V8C6 4.68629 8.68629 2 12 2Z"
+              ></path>
+            </svg>
+          </div>
+
+          <!-- 3rd row -->
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <!-- hidden card 3th -->
+          <div
+            class="card absolute top-[264px] right-5 items-center justify-center flex hidden-card"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 19C12.8284 19 13.5 19.6716 13.5 20.5C13.5 21.3284 12.8284 22 12 22C11.1716 22 10.5 21.3284 10.5 20.5C10.5 19.6716 11.1716 19 12 19ZM12 2C15.3137 2 18 4.68629 18 8C18 10.1646 17.2474 11.2907 15.3259 12.9231C13.3986 14.5604 13 15.2969 13 17H11C11 14.526 11.787 13.3052 14.031 11.3989C15.5479 10.1102 16 9.43374 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8V9H6V8C6 4.68629 8.68629 2 12 2Z"
+              ></path>
+            </svg>
+          </div>
+
+          <!-- 2nd row -->
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <!-- hidden card 2nd -->
+          <div
+            class="card absolute top-[377px] right-5 items-center justify-center flex hidden-card"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 19C12.8284 19 13.5 19.6716 13.5 20.5C13.5 21.3284 12.8284 22 12 22C11.1716 22 10.5 21.3284 10.5 20.5C10.5 19.6716 11.1716 19 12 19ZM12 2C15.3137 2 18 4.68629 18 8C18 10.1646 17.2474 11.2907 15.3259 12.9231C13.3986 14.5604 13 15.2969 13 17H11C11 14.526 11.787 13.3052 14.031 11.3989C15.5479 10.1102 16 9.43374 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8V9H6V8C6 4.68629 8.68629 2 12 2Z"
+              ></path>
+            </svg>
+          </div>
+
+          <!-- 1st row -->
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <!-- hidden card 1st -->
+          <div
+            class="card absolute right-5 top-[490px] mb-9 items-center justify-center flex hidden-card"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 19C12.8284 19 13.5 19.6716 13.5 20.5C13.5 21.3284 12.8284 22 12 22C11.1716 22 10.5 21.3284 10.5 20.5C10.5 19.6716 11.1716 19 12 19ZM12 2C15.3137 2 18 4.68629 18 8C18 10.1646 17.2474 11.2907 15.3259 12.9231C13.3986 14.5604 13 15.2969 13 17H11C11 14.526 11.787 13.3052 14.031 11.3989C15.5479 10.1102 16 9.43374 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8V9H6V8C6 4.68629 8.68629 2 12 2Z"
+              ></path>
+            </svg>
+          </div>
+
+          <!-- start line -->
+          <div class="start">PLayer 1</div>
+          <div class="start">PLayer 2</div>
+          <div class="start">PLayer 3</div>
+          <div class="start">PLayer 4</div>
+        </section>
+        <!-- card hidden -->
+      </div>
+
+      <!-- gameplay option and spread deck starst here -->
+      <!-- <section class="flex justify-between px-[43px] py-[36px] relative">
+          <div class="opencard"></div>
+          // special cards options //
+          <div>
+            <div>YES</div>
+            <div>NO</div>
+          </div>
+          <div class="absolute card right-5">card</div>
+        </section> -->
+    </section>
+  </body>
+</html>
