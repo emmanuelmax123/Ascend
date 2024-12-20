@@ -13,6 +13,10 @@
   .cardopt {
     @apply m-auto h-[50px] w-[42px] border-2 border-black bg-violet-600 rounded;
   }
+  .cardhover {
+    @apply hover:scale-110 transition duration-500 hover:border-white/35;
+  }
+
   .opencard {
     @apply h-[97px] w-[82px] border-2 border-black bg-violet-600 rounded;
   }
