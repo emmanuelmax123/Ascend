@@ -1,6 +1,4 @@
-// select player-- player can pick between one of four shapes
-
-// background audio
+//playing background audio on reload
 
 window.addEventListener("load", () => {
   const soundModal = document.getElementById("soundModal");
@@ -25,12 +23,7 @@ window.addEventListener("load", () => {
   });
 });
 
-/*
-console.log("Audio autoplay status:", !audio.paused ? "Playing" : "Paused");
-*/
-
-console.log("Audio autoplay status:", !audio.paused ? "Playing" : "Paused");
-
+// interactive sound button
 const audioIcon = document.getElementById("audioicon");
 const audioElement = document.getElementById("audio");
 const svgPath = document.getElementById("soundpath");
@@ -53,6 +46,14 @@ audioIcon.addEventListener("click", () => {
     console.log("play music");
   }
 });
+
+// game play starts here
+function gamestarts() {
+  const gameplay = document.getElementById("gameplay");
+  const introscreen = document.getElementById("intoscreen");
+  introscreen.classList.add("hidden");
+  gameplay.classList.remove("hidden");
+}
 
 /* player choice */
 const playerCards = [
