@@ -1,5 +1,59 @@
 // select player-- player can pick between one of four shapes
 
+// background audio
+
+window.addEventListener("load", () => {
+  const soundModal = document.getElementById("soundModal");
+  const playSoundButton = document.getElementById("playSound");
+  const muteSoundButton = document.getElementById("muteSound");
+  const audioElement = document.getElementById("audio");
+
+  // Show the modal on page load
+  soundModal.classList.add("flex");
+  soundModal.classList.remove("hidden");
+
+  // Event listeners for modal buttons
+  playSoundButton.addEventListener("click", () => {
+    audio.play();
+    audioElement.muted = false; // Unmute audio
+    soundModal.classList.add("hidden"); // Hide modal
+  });
+
+  muteSoundButton.addEventListener("click", () => {
+    audioElement.muted = true; // Keep audio muted
+    soundModal.classList.add("hidden"); // Hide modal
+  });
+});
+
+/*
+console.log("Audio autoplay status:", !audio.paused ? "Playing" : "Paused");
+*/
+
+console.log("Audio autoplay status:", !audio.paused ? "Playing" : "Paused");
+
+const audioIcon = document.getElementById("audioicon");
+const audioElement = document.getElementById("audio");
+const svgPath = document.getElementById("soundpath");
+audioIcon.addEventListener("click", () => {
+  if (!audioElement.paused) {
+    audioElement.pause();
+    audioIcon.setAttribute("fill", "rgba(239,68,68,1)");
+    svgPath.setAttribute(
+      "d",
+      "M10 7.22056L6.60282 10.0001H3V14.0001H6.60282L10 16.7796V7.22056ZM5.88889 16.0001H2C1.44772 16.0001 1 15.5524 1 15.0001V9.00007C1 8.44778 1.44772 8.00007 2 8.00007H5.88889L11.1834 3.66821C11.3971 3.49335 11.7121 3.52485 11.887 3.73857C11.9601 3.8279 12 3.93977 12 4.05519V19.9449C12 20.2211 11.7761 20.4449 11.5 20.4449C11.3846 20.4449 11.2727 20.405 11.1834 20.3319L5.88889 16.0001ZM20.4142 12.0001L23.9497 15.5356L22.5355 16.9498L19 13.4143L15.4645 16.9498L14.0503 15.5356L17.5858 12.0001L14.0503 8.46454L15.4645 7.05032L19 10.5859L22.5355 7.05032L23.9497 8.46454L20.4142 12.0001Z"
+    );
+    console.log("pause music");
+  } else {
+    audioElement.play();
+    audioIcon.setAttribute("fill", "rgba(100,205,138,1)");
+    svgPath.setAttribute(
+      "d",
+      "M13 7.22056L9.60282 10.0001H6V14.0001H9.60282L13 16.7796V7.22056ZM8.88889 16.0001H5C4.44772 16.0001 4 15.5524 4 15.0001V9.00007C4 8.44778 4.44772 8.00007 5 8.00007H8.88889L14.1834 3.66821C14.3971 3.49335 14.7121 3.52485 14.887 3.73857C14.9601 3.8279 15 3.93977 15 4.05519V19.9449C15 20.2211 14.7761 20.4449 14.5 20.4449C14.3846 20.4449 14.2727 20.405 14.1834 20.3319L8.88889 16.0001ZM18.8631 16.5911L17.4411 15.1691C18.3892 14.4376 19 13.2902 19 12.0001C19 10.5697 18.2493 9.31476 17.1203 8.60766L18.5589 7.16906C20.0396 8.26166 21 10.0187 21 12.0001C21 13.8422 20.1698 15.4905 18.8631 16.5911Z"
+    );
+    console.log("play music");
+  }
+});
+
 /* player choice */
 const playerCards = [
   { shape: "diamond", id: "1" },
@@ -8,10 +62,10 @@ const playerCards = [
   { shape: "heart", id: "4" },
 ];
 
-document.getElementById("spade").addEventListener("click", playerCard);
-document.getElementById("club").addEventListener("click", playerCard);
-document.getElementById("heart").addEventListener("click", playerCard);
-document.getElementById("diamond").addEventListener("click", playerCard);
+// document.getElementById("spade").addEventListener("click", playerCard);
+// document.getElementById("club").addEventListener("click", playerCard);
+// document.getElementById("heart").addEventListener("click", playerCard);
+// document.getElementById("diamond").addEventListener("click", playerCard);
 
 function playerCard(event) {
   // this will get the id in which we clicked

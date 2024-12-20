@@ -22,13 +22,13 @@
 }
 @layer base {
   h1 {
-    @apply text-[82px] text-[#0a0a0a] font-title;
+    @apply text-[112px] text-[#0a0a0a] font-title;
   }
   h2 {
-    @apply text-[28px] text-[#0a0a0a] font-descritext;
+    @apply text-[28px] text-[#0a0a0a];
   }
   h3 {
-    @apply text-[24px] text-[#0a0a0a];
+    @apply text-[24px] text-[#0a0a0a] font-descritext;
   }
   h4 {
     @apply text-[20px] text-[#0a0a0a];
