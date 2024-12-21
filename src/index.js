@@ -55,28 +55,22 @@ function gamestarts() {
   gameplay.classList.remove("hidden");
 }
 
-/* player choice */
-const playerCards = [
-  { shape: "diamond", id: "1" },
-  { shape: "spade", id: "2" },
-  { shape: "club", id: "3" },
-  { shape: "heart", id: "4" },
-];
-
-// document.getElementById("spade").addEventListener("click", playerCard);
-// document.getElementById("club").addEventListener("click", playerCard);
-// document.getElementById("heart").addEventListener("click", playerCard);
-// document.getElementById("diamond").addEventListener("click", playerCard);
-
 function playerCard(event) {
   // this will get the id in which we clicked
-  userId = event.target.id; //if spade was clicked spade is now the userId
+  userId = event.target.id;
+  console.log(`user selected ${userId}`);
+  // run the game
+  gamestarts();
+}
 
-  // Find the card in the playerCards array where the shape matches the clicked id
-  const usercard = playerCards.find((card) => card.shape === userId);
-  if (usercard) {
-    console.log(`user selected ${usercard.shape}`);
-  }
+function detectSelectedCard() {
+  // get all cards
+  const allCards = document.querySelectorAll("selectcard");
+  // add and event listern for each card
+  allCards.forEach((card) => {
+    // run the playacrd with an event of click on each card
+    card.addEventListener("click", playerCard);
+  });
 }
 
 const hiddencard = ["diamnond", "spade", "club", "heart"];
@@ -126,7 +120,38 @@ generateDeck();
 // --Contains 32 cards
 // isactive elememt on all decks with the card id
 
-/*Players moveemnet*/
+/*Players movement*/
+
+// get the player
+// create a
+// get player
+const player1 = document.getElementById("player1");
+player1.addEventListener("click", () => {
+  playermovement(player1);
+});
+
+// get all players
+const players = document.querySelectorAll(".player");
+
+// control playermovement based on card
+function playermovement(player) {
+  // get all players row location
+  const playerLoc = parseInt(player.dataset.row);
+  if (playerLoc < 4) {
+    // move players up
+    const newRow = playerLoc + 1;
+    // make this the new loaction
+    player.dataset.row = newRow;
+    // move players up by 100px
+    player.style.transform = `translateY(-${newRow * 100}px)`;
+  } else {
+    console.log("player won");
+  }
+}
+
+// control playermovement based on special card
+function specialcard() {}
+
 // the deck is shuffled at the starts of the game
 // the top card is choossen and if it matches any players then
 // the current isactve is off and the next card that has the card id is now active and the card player is render their

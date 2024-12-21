@@ -17,7 +17,7 @@
 " -->
   <body class="min-h-screen p-4 bg-[#121010]">
     <!-- intro div  -->
-    <div id="intoscreen" class="hidden">
+    <div id="intoscreen" class="">
       <!-- audio section starts here -->
       <section class="flex justify-end items-end">
         <audio controls autoplay muted loop id="audio" class="hidden">
@@ -92,10 +92,7 @@
         <!-- suits seection starts here -->
         <section class="flex justify-between">
           <!-- heart -->
-          <div
-            class="selectcard bg-[#ea2e2e]/10 cardhover"
-            onclick="gamestarts()"
-          >
+          <div class="selectcard bg-[#ea2e2e]/10 cardhover" id="heart">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -109,10 +106,7 @@
           </div>
 
           <!-- spade -->
-          <div
-            class="selectcard bg-[#4692dd]/10 cardhover"
-            onclick="gamestarts()"
-          >
+          <div class="selectcard bg-[#4692dd]/10 cardhover" id="spade">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -126,10 +120,7 @@
           </div>
 
           <!-- diamond -->
-          <div
-            class="selectcard bg-[#f0bb40]/10 cardhover"
-            onclick="gamestarts()"
-          >
+          <div class="selectcard bg-[#f0bb40]/10 cardhover" id="diamond">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -143,10 +134,7 @@
           </div>
 
           <!-- club -->
-          <div
-            class="selectcard bg-[#64cd8a]/10 cardhover"
-            onclick="gamestarts()"
-          >
+          <div class="selectcard bg-[#64cd8a]/10 cardhover" id="club">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -167,7 +155,7 @@
     <!-- gameplay div -->
     <div
       id="gameplay"
-      class="border-red-400 border-2 grid grid-cols-[200px_1fr] bg-white"
+      class="border-red-400 border-2 grid grid-cols-[200px_1fr] bg-white hidden"
     >
       <!-- home icon starts here -->
       <section class="">
@@ -290,10 +278,10 @@
             </div>
 
             <!-- start line -->
-            <div class="start">PLayer 1</div>
-            <div class="start">PLayer 2</div>
-            <div class="start">PLayer 3</div>
-            <div class="start">PLayer 4</div>
+            <div class="start player" id="player1" data-row="0">PLayer 1</div>
+            <div class="start player" id="player2" data-row="0">PLayer 2</div>
+            <div class="start player" id="player3" data-row="0">PLayer 3</div>
+            <div class="start player" id="player4" data-row="0">PLayer 4</div>
           </section>
           <!-- card hidden -->
         </div>
