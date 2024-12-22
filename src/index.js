@@ -5,6 +5,7 @@ window.addEventListener("load", () => {
   const playSoundButton = document.getElementById("playSound");
   const muteSoundButton = document.getElementById("muteSound");
   const audioElement = document.getElementById("audio");
+  detectSelectedCard();
 
   // Show the modal on page load
   soundModal.classList.add("flex");
@@ -56,8 +57,9 @@ function gamestarts() {
 }
 
 function playerCard(event) {
-  // this will get the id in which we clicked
-  userId = event.target.id;
+  // this will get the div that hold the id in which we clicked
+  userId = event.currentTarget.id;
+  console.log(userId);
   console.log(`user selected ${userId}`);
   // run the game
   gamestarts();
@@ -65,7 +67,7 @@ function playerCard(event) {
 
 function detectSelectedCard() {
   // get all cards
-  const allCards = document.querySelectorAll("selectcard");
+  const allCards = document.querySelectorAll(".selectcard");
   // add and event listern for each card
   allCards.forEach((card) => {
     // run the playacrd with an event of click on each card
