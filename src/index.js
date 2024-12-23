@@ -1,5 +1,5 @@
 //playing background audio on reload
-
+let userId;
 window.addEventListener("load", () => {
   const soundModal = document.getElementById("soundModal");
   const playSoundButton = document.getElementById("playSound");
@@ -114,23 +114,12 @@ function generateDeck() {
 
 generateDeck();
 
-// get hidden card takes the card shapes randomize them and place them when the game starts
-
-// it should create a deck of 30 cards it should add each shape 7 times, it should randomly add 4 special card (specialcard1 or specialcard2)
-
-// create a deck
-// --Contains 32 cards
-// isactive elememt on all decks with the card id
-
-/*Players movement*/
-
-// get the player
-// create a
-// get player
-const player1 = document.getElementById("player1");
-player1.addEventListener("click", () => {
-  playermovement(player1);
-});
+// trying to use userid as player one
+const player1 = userId;
+console.log(player1);
+// player1.addEventListener("click", () => {
+//   playermovement(player1);
+// });
 
 // get all players
 const players = document.querySelectorAll(".player");
