@@ -159,6 +159,7 @@
     >
       <!-- home icon starts here -->
       <section class="">
+        <!-- home icon start here -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -170,21 +171,27 @@
             d="M20 20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20ZM8 15V17H16V15H8Z"
           ></path>
         </svg>
-        <div class="card" onclick="shuffle(deck)">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path
-              d="M18 17.8832V16L23 19L18 22V19.9095C14.9224 19.4698 12.2513 17.4584 11.0029 14.5453L11 14.5386L10.9971 14.5453C9.57893 17.8544 6.32508 20 2.72483 20H2V18H2.72483C5.52503 18 8.05579 16.3312 9.15885 13.7574L9.91203 12L9.15885 10.2426C8.05579 7.66878 5.52503 6 2.72483 6H2V4H2.72483C6.32508 4 9.57893 6.14557 10.9971 9.45473L11 9.46141L11.0029 9.45473C12.2513 6.5416 14.9224 4.53022 18 4.09051V2L23 5L18 8V6.11684C15.7266 6.53763 13.7737 8.0667 12.8412 10.2426L12.088 12L12.8412 13.7574C13.7737 15.9333 15.7266 17.4624 18 17.8832Z"
-            ></path>
-          </svg>
-          <div class="">shuffles deck</div>
+        <!-- deck starts here -->
+        <div
+          class="card flex flex-col justify-center items-center"
+          onclick="shuffle(deck)"
+        >
+          <h2 id="cardleft">32</h2>
+          <div class="flex gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M18 17.8832V16L23 19L18 22V19.9095C14.9224 19.4698 12.2513 17.4584 11.0029 14.5453L11 14.5386L10.9971 14.5453C9.57893 17.8544 6.32508 20 2.72483 20H2V18H2.72483C5.52503 18 8.05579 16.3312 9.15885 13.7574L9.91203 12L9.15885 10.2426C8.05579 7.66878 5.52503 6 2.72483 6H2V4H2.72483C6.32508 4 9.57893 6.14557 10.9971 9.45473L11 9.46141L11.0029 9.45473C12.2513 6.5416 14.9224 4.53022 18 4.09051V2L23 5L18 8V6.11684C15.7266 6.53763 13.7737 8.0667 12.8412 10.2426L12.088 12L12.8412 13.7574C13.7737 15.9333 15.7266 17.4624 18 17.8832Z"
+              ></path>
+            </svg>
+            <div>shuffles deck</div>
+          </div>
         </div>
-        <div class="card open-card" style="margin-top: 50px">
-          Holds Deck of cards
-        </div>
+        <!-- display cards starts here -->
+        <div class="card open-card" style="margin-top: 50px">3 cards left</div>
       </section>
 
       <!-- main game saction starts here -->
@@ -278,10 +285,18 @@
             </div>
 
             <!-- start line -->
-            <div class="start player" id="player1" data-row="0">PLayer 1</div>
-            <div class="start player" id="player2" data-row="0">PLayer 2</div>
-            <div class="start player" id="player3" data-row="0">PLayer 3</div>
-            <div class="start player" id="player4" data-row="0">PLayer 4</div>
+            <div class="start player" id="spades" data-row="0" data-col="1">
+              PLayer 1
+            </div>
+            <div class="start player" id="hearts" data-row="1" data-col="2">
+              PLayer 2
+            </div>
+            <div class="start player" id="clubs" data-row="1" data-col="3">
+              PLayer 3
+            </div>
+            <div class="start player" id="diamonds" data-row="1" data-col="4">
+              PLayer 4
+            </div>
           </section>
           <!-- card hidden -->
         </div>

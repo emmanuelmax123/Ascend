@@ -1,5 +1,4 @@
 //playing background audio on reload
-let userId;
 window.addEventListener("load", () => {
   const soundModal = document.getElementById("soundModal");
   const playSoundButton = document.getElementById("playSound");
@@ -48,22 +47,30 @@ audioIcon.addEventListener("click", () => {
   }
 });
 
+let userId;
+
 // game play starts here
 function gamestarts() {
   const gameplay = document.getElementById("gameplay");
   const introscreen = document.getElementById("intoscreen");
   introscreen.classList.add("hidden");
   gameplay.classList.remove("hidden");
+  const player1 = document.getElementById(`${globalThis.userId}s`);
+  player1.addEventListener("click", () => {
+    playermovement(player1);
+  });
 }
 
 function playerCard(event) {
   // this will get the div that hold the id in which we clicked
-  userId = event.currentTarget.id;
-  console.log(userId);
-  console.log(`user selected ${userId}`);
+  globalThis.userId = event.currentTarget.id;
+  console.log(globalThis.userId);
   // run the game
   gamestarts();
+  battleBegins();
 }
+
+console.log(globalThis.userId);
 
 function detectSelectedCard() {
   // get all cards
@@ -76,7 +83,9 @@ function detectSelectedCard() {
 }
 
 const hiddencard = ["diamnond", "spade", "club", "heart"];
-const deck = [];
+let deck = [];
+let viewDeck = [];
+let currDeck = 0;
 
 /* this is used to shuffle ths hidden card at the start of the game*/
 shuffle(hiddencard);
@@ -88,7 +97,7 @@ function shuffle(array) {
     // using desctucturing
     [array[i], array[random]] = [array[random], array[i]];
   }
-  console.log(array);
+  // console.log(array);
 }
 
 /* this is for generating deck and shuffling it */
@@ -114,15 +123,38 @@ function generateDeck() {
 
 generateDeck();
 
-// trying to use userid as player one
-const player1 = userId;
-console.log(player1);
-// player1.addEventListener("click", () => {
-//   playermovement(player1);
-// });
+// main deck should shouw how many cards it has left
+
+// get the open card
+function battleBegins() {
+  setInterval(() => {
+    if (currDeck <= deck.length) {
+      viewDeck.push(deck[0]);
+      currDeck++;
+      let view = deck.length--;
+      document.getElementById("cardleft").innerText = view;
+      // console.log(view);
+      // console.log(viewDeck);
+      // console.log(viewDeck.length);
+      // console.log(`this is the curent deck count${currDeck}`);
+    }
+  }, 2000);
+}
+console.log(deck.length);
+
+// the open should take 1 card every 2 sec from the main dect
 
 // get all players
 const players = document.querySelectorAll(".player");
+function allplayerMovement() {
+  let allPlayerLoc = Array.from(players).map((player) => player.dataset.row);
+  console.log(allPlayerLoc);
+  console.log(allPlayerLoc.every(checkLiveRow));
+  function checkLiveRow(allPlayerLoc) {
+    return allPlayerLoc == 1;
+    // this checks if all players are raeched row 1
+  }
+}
 
 // control playermovement based on card
 function playermovement(player) {
@@ -135,10 +167,14 @@ function playermovement(player) {
     player.dataset.row = newRow;
     // move players up by 100px
     player.style.transform = `translateY(-${newRow * 100}px)`;
+    allplayerMovement();
   } else {
     console.log("player won");
   }
 }
+
+// shuffle user id col pos
+shuffle(players);
 
 // control playermovement based on special card
 function specialcard() {}
