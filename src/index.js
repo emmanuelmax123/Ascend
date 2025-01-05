@@ -55,9 +55,17 @@ function gamestarts() {
   const introscreen = document.getElementById("intoscreen");
   introscreen.classList.add("hidden");
   gameplay.classList.remove("hidden");
+
   const player1 = document.getElementById(`${globalThis.userId}s`);
-  player1.addEventListener("click", () => {
-    playermovement(player1);
+  // player1.addEventListener("click", () => {
+  //   playermovement(player1);
+  // });
+
+  // moves each player one at a time every 3 sec
+  players.forEach((player, index) => {
+    setTimeout(() => {
+      playermovement(player);
+    }, index * 3000);
   });
 }
 
@@ -146,13 +154,23 @@ console.log(deck.length);
 
 // get all players
 const players = document.querySelectorAll(".player");
-function allplayerMovement() {
+
+function moveToRevealCard() {
   let allPlayerLoc = Array.from(players).map((player) => player.dataset.row);
-  console.log(allPlayerLoc);
-  console.log(allPlayerLoc.every(checkLiveRow));
+
+  // console.log(allPlayerLoc);
+  // console.log(allPlayerLoc.every(checkLiveRow));
+
   function checkLiveRow(allPlayerLoc) {
-    return allPlayerLoc == 1;
     // this checks if all players are raeched row 1
+    return allPlayerLoc == 1;
+  }
+
+  if (allPlayerLoc.every(checkLiveRow)) {
+    document.querySelector(".questionMark").classList.add("hidden");
+    document.querySelector(".hidenRanShape").classList.remove("hidden");
+    document.querySelector(".hidenRanShapeText").classList.remove("hidden");
+    console.log("all at 1");
   }
 }
 
@@ -167,7 +185,7 @@ function playermovement(player) {
     player.dataset.row = newRow;
     // move players up by 100px
     player.style.transform = `translateY(-${newRow * 100}px)`;
-    allplayerMovement();
+    moveToRevealCard();
   } else {
     console.log("player won");
   }
