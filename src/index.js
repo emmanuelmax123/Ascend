@@ -63,9 +63,21 @@ function gamestarts() {
 
   // moves each player one at a time every 3 sec
   players.forEach((player, index) => {
-    setTimeout(() => {
+    const moveplayer = () => {
+      if (parseInt(player.dataset.row, 10) >= 4) {
+        console.log(`${player.id} won!`);
+        return; // Stop further movement for this player
+      }
+
       playermovement(player);
-    }, index * 3000);
+      console.log(`${player.id} moved to ${player.dataset.row}`);
+
+      // Schedule the next move for this player after all players have had their turn
+      setTimeout(moveplayer, players.length * 1000);
+    };
+
+    // Start the loop for each player with an initial delay based on their index
+    setTimeout(moveplayer, index * 1000);
   });
 }
 
@@ -91,12 +103,20 @@ function detectSelectedCard() {
 }
 
 const hiddencard = ["diamnond", "spade", "club", "heart"];
+shuffle(hiddencard);
+cardshidden = document.querySelectorAll(".hidenRanShapeText");
+cardshidden.forEach((card, index) => {
+  if (hiddencard[index]) {
+    card.innerText = hiddencard[index];
+    console.log(card.innerText);
+  }
+});
+
 let deck = [];
 let viewDeck = [];
 let currDeck = 0;
 
 /* this is used to shuffle ths hidden card at the start of the game*/
-shuffle(hiddencard);
 
 /* fisher-yates algorithm */
 function shuffle(array) {
@@ -156,21 +176,30 @@ console.log(deck.length);
 const players = document.querySelectorAll(".player");
 
 function moveToRevealCard() {
-  let allPlayerLoc = Array.from(players).map((player) => player.dataset.row);
+  let allPlayerLoc = Array.from(players).map((player) =>
+    parseInt(player.dataset.row)
+  );
 
   // console.log(allPlayerLoc);
   // console.log(allPlayerLoc.every(checkLiveRow));
 
-  function checkLiveRow(allPlayerLoc) {
-    // this checks if all players are raeched row 1
-    return allPlayerLoc == 1;
+  function checkLiveRow(playerRow) {
+    // Get all hidden cards
+    let hiddenCards = document.querySelectorAll(".hidden-card");
+
+    // Check if any hidden card's data-no matches the player's row
+    return Array.from(hiddenCards).some(
+      (hide) => parseInt(hide.dataset.no) === playerRow
+    );
   }
 
   if (allPlayerLoc.every(checkLiveRow)) {
+    console.log(allPlayerLoc);
     document.querySelector(".questionMark").classList.add("hidden");
     document.querySelector(".hidenRanShape").classList.remove("hidden");
     document.querySelector(".hidenRanShapeText").classList.remove("hidden");
-    console.log("all at 1");
+    // i want yo push the hidden card into the
+    console.log("All players are at matching rows!");
   }
 }
 
